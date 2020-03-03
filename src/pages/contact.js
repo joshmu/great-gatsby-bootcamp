@@ -1,12 +1,13 @@
 import React from "react"
 
 import Layout from "../components/layout"
+import contactStyles from "./contact.module.scss"
 
 const contact = () => {
   return (
     <Layout>
       <h1>Contact</h1>
-      <ul>
+      <ul className={contactStyles.list}>
         <li>
           <a
             href="https://joshmu.com"
