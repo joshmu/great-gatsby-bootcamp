@@ -6,13 +6,14 @@ const contact = () => {
       <h1>Contact</h1>
       <ul>
         <li>
-          <a href="https://joshmu.com">joshmu.com</a>
+          <a href="https://joshmu.com" target="_blank">
+            joshmu.com
+          </a>
         </li>
         <li>
-          <a href="https://instagram.com/joshmu">@joshmu</a>
-        </li>
-        <li>
-          <a href="mailto:mu@joshmu.com">mu@joshmu.com</a>
+          <a href="https://instagram.com/joshmu" target="_blank">
+            @joshmu
+          </a>
         </li>
       </ul>
     </div>
