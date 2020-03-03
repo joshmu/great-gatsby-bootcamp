@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const AboutPage = () => {
   return (
@@ -9,7 +10,9 @@ const AboutPage = () => {
         <span role="img" aria-label="coffee emoji">
           ☕
         </span>
-        ️
+      </p>
+      <p>
+        Need a developer? <Link to="/contact">Contact me.</Link>
       </p>
     </div>
   )
