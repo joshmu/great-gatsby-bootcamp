@@ -4,10 +4,8 @@ import { Link } from "gatsby"
 const Header = () => {
   return (
     <header>
-      <div>
-        <h1>Gatsby Project 1</h1>
-      </div>
-      <div>
+      <h1>Great Gatsby</h1>
+      <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -22,7 +20,7 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
   )
 }

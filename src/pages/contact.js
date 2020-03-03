@@ -1,12 +1,10 @@
 import React from "react"
 
-import Header from "../components/header"
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 
 const contact = () => {
   return (
-    <div>
-      <Header />
+    <Layout>
       <h1>Contact</h1>
       <ul>
         <li>
@@ -28,8 +26,7 @@ const contact = () => {
           </a>
         </li>
       </ul>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
