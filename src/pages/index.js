@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Header from "../components/header"
 import Footer from "../components/footer"
 
 const IndexPage = () => {
   return (
     <div>
+      <Header />
       <h1>Hello</h1>
       <h2>I'm Josh, a full-stack developer living in beautiful Brisbane.</h2>
       <p>
@@ -17,3 +19,7 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+// setup header component > site title + 4 links to pages
+// render at the top of all pages
+// test work
