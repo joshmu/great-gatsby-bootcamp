@@ -23,6 +23,36 @@ module.exports.createPages = async ({ graphql, actions }) => {
   // get the slugs
   const res = await graphql(`
     query {
+      allContentfulBlogPost {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  // create page for each slug
+  res.data.allContentfulBlogPost.edges.forEach(edge => {
+    createPage({
+      component: blogTemplate, // only path required, not actual component
+      path: `/blog/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    })
+  })
+}
+
+/*
+// create blog pages from the slug
+module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  // get path to template
+  const blogTemplate = path.resolve("./src/templates/blog.js")
+  // get the slugs
+  const res = await graphql(`
+    query {
       allMarkdownRemark {
         edges {
           node {
@@ -45,3 +75,4 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+// */
