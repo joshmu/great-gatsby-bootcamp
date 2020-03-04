@@ -26,8 +26,8 @@ const BlogPage = () => {
     <Layout>
       <h1>Blog</h1>
       <ol>
-        {data.allMarkdownRemark.edges.map(edge => (
-          <li key={edge.id}>
+        {data.allMarkdownRemark.edges.map((edge, idx) => (
+          <li key={idx}>
             <Link to={`/blog/${edge.node.fields.slug}`}>
               <h2>{edge.node.frontmatter.title}</h2>
               <p>{edge.node.frontmatter.date}</p>
