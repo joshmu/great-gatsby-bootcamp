@@ -1,15 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import Layout from "../components/layout"
 
 export const query = graphql`
-  query($slug: String) {
+  query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-      slug
       publishedDate(formatString: "MMMM Do, YYYY")
       body {
-        body
+        json
       }
     }
   }
@@ -20,11 +21,7 @@ const Blog = props => {
     <Layout>
       <h1>{props.data.contentfulBlogPost.title}</h1>
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: props.data.contentfulBlogPost.body.body,
-        }}
-      ></div>
+      {documentToReactComponents(props.data.contentfulBlogPost.body.json)}
     </Layout>
   )
 }
